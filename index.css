@@ -1,7 +1,6 @@
 body{
     height: 100vh;
-    /* background-color:  #2E4374; */
-  background: linear-gradient(#FF8080 50%, #FFCF96 50%);
+    background-color: #B6E2A1;
 }
 
 .app{
