@@ -109,8 +109,8 @@ body{
 }
 
 .task input[type="checkbox"]:checked{
-    background-color: #5a95ff;
-    border-color: #5a95ff;
+    background-color: #82CD47;
+    border-color: #82CD47;
 }
 
 .task input[type="checkbox"]:checked:before
