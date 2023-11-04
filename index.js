@@ -1,23 +1,23 @@
-const addBtn=document.querySelector("#add-btn");
-const newTaskInput=document.querySelector("#wrapper input");
-const tasksContainer = document.querySelector(".tasks");
-const error=document.querySelector("#error");
-const countValue=document.querySelector(".count-value");
+const addNewBtn=document.querySelector("#add-btn");
+const taskInput=document.querySelector("#wrapper input");
+const taskContainer = document.querySelector(".tasks");
+const errorMssg=document.querySelector("#error");
+const count=document.querySelector(".count-value");
 
 let taskCount=0;
 
 const displayCount=(taskCount)=>{
-    countValue.innerText=taskCount;
+    count.innerText=taskCount;
 }
 
-const addTask=()=>
+const addNewTask=()=>
 {
-    const taskName= newTaskInput.value.trim();
-    error.style.display="none";
+    const taskName= taskInput.value.trim();
+    errorMssg.style.display="none";
     if(!taskName)
     {
         setTimeout(()=>{
-            error.style.display="block";
+            errorMssg.style.display="block";
         },200);
         return;
     }
@@ -36,7 +36,7 @@ const addTask=()=>
 
         </div>`;
         
-        tasksContainer.insertAdjacentHTML("beforeend",task);
+        taskContainer.insertAdjacentHTML("beforeend",task);
         const deleteButtons=document.querySelectorAll(".delete");
         deleteButtons.forEach((button)=>{
             button.onclick=()=>{
@@ -61,7 +61,7 @@ const addTask=()=>
                     targetElement=e.target.parentElement;
 
                 }
-                newTaskInput.value=targetElement.previousElementSibling?.innerText;
+                taskInput.value=targetElement.previousElementSibling?.innerText;
                 targetElement.parentNode.remove();
                 taskCount-=1;
                 displayCount(taskCount);
@@ -93,14 +93,14 @@ const addTask=()=>
 
 taskCount+=1;
 displayCount(taskCount);
-newTaskInput.value=""
+taskInput.value=""
 
 };
 
-addBtn.addEventListener("click",addTask);
+addNewBtn.addEventListener("click",addNewTask);
 
 window.onload = () => {
         taskCount=0;
         displayCount(taskCount);
-        newTaskInput.value="";
+        taskInput.value="";
 }
