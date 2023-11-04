@@ -27,7 +27,7 @@ const addNewTask=()=>
         <span class="taskname">${taskName}</span>
 
         <button class="edit">
-        <i class="fa-solid fa-pen-to-square"></i>
+        <i class="fa-solid fa-pen"></i>
         </button>
 
         <button class="delete">
